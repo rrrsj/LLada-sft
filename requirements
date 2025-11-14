@@ -1,0 +1,6 @@
+datasets
+transformers
+huggingface
+tensorboard
+lightning==2.5.5
+einops

@@ -1,0 +1,28 @@
+default_checkpoint: "/home/share/LLaDA-1.5/" #默认checkpoint
+load_checkpoint: None  
+
+train_max_length: 512  # 训练时的最大长度
+use_flash_attention: False 
+use_casual_document_mask: False #llada不能用
+
+
+file_buffer_size: 1 # 一次性读几个文件
+data_path: "./data/generate_data" #数据的位置
+
+
+
+num_nodes: 1 
+epoch: 1
+accelerator: "gpu"
+accumulate_grad_batches: 1 #梯度累计
+enable_checkpointing: True 
+num_gpus: [1,2,3,4,5,6] #gpu id
+precision: "bf16-mixed"
+save_topk: 1 # 保存topk个checkpoint
+train_step: 1000000
+save_time: "2025.11.11_15:54" 
+log_dir: "./log/save_checkpoints/"
+seed: 2025
+learn_rateing: 1e-5
+batch_size: 1
+save_step: 10000  #训多少步保存一次
